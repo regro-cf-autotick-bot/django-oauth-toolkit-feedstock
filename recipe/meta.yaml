@@ -1,13 +1,13 @@
 {% set name = "django-oauth-toolkit" %}
-{% set version = "2.2.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-oauth-toolkit-{{ version }}.tar.gz
-  sha256: 46890decb24a34e2a5382debeaf7752e50d90b7a11716cf2a9fd067097ec0963
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 8975eaf697413a8d54208ee068bc5ad6d1ed76f1df84e4882fbb25e7e6966e1b
 
 build:
   noarch: python
@@ -20,10 +20,11 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - django >=2.2,!=4.0.0
+    - django >=3.2,!=4.0.0
     - requests >=2.13.0
     - oauthlib >=3.1.0
     - jwcrypto >=0.8.0
+    - pytz >=2024.1
 
 test:
   imports:
