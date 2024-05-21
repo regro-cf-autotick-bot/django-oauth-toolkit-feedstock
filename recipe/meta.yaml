@@ -20,10 +20,11 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - django >=2.2,!=4.0.0
+    - django >=3.2,!=4.0.0
     - requests >=2.13.0
     - oauthlib >=3.1.0
     - jwcrypto >=0.8.0
+    - pytz >=2024.1
 
 test:
   imports:
